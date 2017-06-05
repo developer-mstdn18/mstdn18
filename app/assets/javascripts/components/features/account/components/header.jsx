@@ -87,6 +87,7 @@ class Header extends React.Component {
     let info        = '';
     let actionBtn   = '';
     let lockedIcon  = '';
+    let providers   = '';
 
     if (displayName.length === 0) {
       displayName = account.get('username');
@@ -114,6 +115,20 @@ class Header extends React.Component {
 
     if (account.get('locked')) {
       lockedIcon = <i className='fa fa-lock' />;
+    }
+
+    if (account.get('oauth_authorizations') && account.get('oauth_authorizations').length !== 0) {
+      providers = (
+        <ul className="authorized-oauth-providers">
+          {account.get('oauth_authorizations').toJS().map(({url, name, provider}) => (
+            <li key={provider}>
+              <a href={url} target="_blank" rel="noopner norefrrer" title={name}>
+                <i className={`fa fa-${provider}`}/>
+              </a>
+            </li>
+           ))}
+        </ul>
+      );
     }
 
     const content         = { __html: emojify(account.get('note')) };

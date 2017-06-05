@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     registrations:      'auth/registrations',
     passwords:          'auth/passwords',
     confirmations:      'auth/confirmations',
+    omniauth_callbacks: 'users/omniauth_callbacks',
   }
 
   get '/users/:username', to: redirect('/@%{username}'), constraints: { format: :html }
@@ -172,6 +173,7 @@ Rails.application.routes.draw do
           get :statuses
           get :followers
           get :following
+          get :oauth_authorizations
 
           post :follow
           post :unfollow

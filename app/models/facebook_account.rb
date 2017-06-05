@@ -1,0 +1,2 @@
+class FacebookAccount < OAuthAuthorization
+end

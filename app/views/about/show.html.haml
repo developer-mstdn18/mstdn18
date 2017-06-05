@@ -20,11 +20,20 @@
     = image_tag 'logo.png'
     = Setting.site_title
 
+  %h3 参加ルール
   %p= t('about.about_mastodon').html_safe
+
+  - if flash[:notice]
+    .flash-message.notice
+      %strong= flash[:notice]
+
+  - if flash[:alert]
+    .flash-message.alert
+      %strong= flash[:alert]
 
   .screenshot-with-signup
     .mascot= image_tag 'fluffy-elephant-friend.png'
-
+    
     - if @instance_presenter.open_registrations
       = render 'registration'
     - else
@@ -39,6 +48,9 @@
           = link_to t('about.other_instances'), 'https://github.com/tootsuite/documentation/blob/master/Using-Mastodon/List-of-Mastodon-instances.md'
           ·
           = link_to t('about.about_this'), about_more_path
+
+  .socialmenu
+    = render 'auth/shared/oauth_buttons'
 
   %h3= t('about.features_headline')
 
@@ -75,6 +87,8 @@
   - unless @instance_presenter.site_description.blank?
     %h3= t('about.description_headline', domain: site_hostname)
     %p= @instance_presenter.site_description.html_safe
+
+
 
   .actions
     .info

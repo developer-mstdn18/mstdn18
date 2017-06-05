@@ -1,0 +1,2 @@
+class LineAccount < OAuthAuthorization
+end
