@@ -24,6 +24,7 @@ gem 'aws-sdk', '>= 2.0'
 
 gem 'addressable'
 gem 'devise'
+gem 'devise-two-factor'
 gem 'omniauth-github'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
