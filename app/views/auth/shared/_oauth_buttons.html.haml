@@ -1,7 +1,9 @@
 %ul.oauth-buttons
   %h3 ソーシャルログイン
+  %p= t('about.about_oauth_warning').html_safe
   - OAuthAuthorization.providers.each do |provider|
     %li
       = link_to omniauth_authorize_path(:user, provider) do
         = fa_icon(provider)
         %span #{provider.capitalize}アカウントでログイン
+        
