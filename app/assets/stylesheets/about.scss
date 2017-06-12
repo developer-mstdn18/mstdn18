@@ -331,6 +331,9 @@
     justify-content: center;
     text-align: center;
 }
+h3.about-oauth{
+    color: red !important;
+}
 
 ul.oauth-buttons {
     margin: 0;
@@ -354,3 +357,4 @@ ul.oauth-buttons {
         }
     }
 }
+
