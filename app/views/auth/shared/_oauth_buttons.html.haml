@@ -3,8 +3,7 @@
     = t('about.about_oauth').html_safe
   %p= t('about.oauth_warning').html_safe
   - OAuthAuthorization.providers.each do |provider|
-    %li
+    %li{class: provider.capitalize}
       = link_to omniauth_authorize_path(:user, provider) do
         = fa_icon(provider)
-        %span #{provider.capitalize}アカウントでログイン
-        
+        %span #{provider.capitalize}アカウントでログイン 

@@ -340,17 +340,33 @@ ul.oauth-buttons {
     flex: 0 0 100%;
     list-style: none;
     >li {
-        margin: 12px 0;
+		margin: 12px 0;
+		border-radius: 8px;
+		background-color: black;
     }
+	.Twitter{
+		background-color: #55acee;
+	}
+	.Facebook{
+		background-color: #3B5998;
+	}
+	.Line{
+		background-color: #00c300;
+	}
+	.Google{
+		background-color: #dd4b39;
+	}
+	.Github{
+		background-color: #4183c4;
+	}
     >li>a {
         display: flex;
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        padding: 8px 12px;
-        border-radius: 8px;
+		padding: 8px 12px;
+		border-radius: 8px;
         color: white;
-        background-color: $color4;
         .fa {
             font-size: 1.8em;
             margin-right: 8px;

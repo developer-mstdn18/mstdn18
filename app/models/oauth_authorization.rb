@@ -1,6 +1,7 @@
 class OAuthAuthorization < ApplicationRecord
   enum type: {
-    TwitterAccount: 0,
+      TwitterAccount: 0,
+      FacebookAccount: 1
     }
 
   belongs_to :user, primary_key: :account_id, foreign_key: :account_id
